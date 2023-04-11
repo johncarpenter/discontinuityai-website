@@ -6,8 +6,8 @@ type Data = {
   }
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
-    //const URL = 'https://api.discontinuity.ai/agent/demo'
-    const URL = 'http://127.0.0.1:8000/agent/demo'
+    const URL = 'https://api.discontinuity.ai/agent/demo/'
+    //const URL = 'http://127.0.0.1:8000/agent/demo/'
   
     fetch(`${URL}`, {
       method: 'POST',
