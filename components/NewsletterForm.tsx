@@ -31,7 +31,7 @@ const NewsletterForm = ({ title = 'Subscribe to the newsletter' }) => {
     inputEl.current.value = ''
     setError(false)
     setSubscribed(true)
-    setMessage('Successfully! 🎉 You are now subscribed.')
+    setMessage('Thanks. One of our team will be in touch soon!')
   }
 
   return (
@@ -62,7 +62,7 @@ const NewsletterForm = ({ title = 'Subscribe to the newsletter' }) => {
             type="submit"
             disabled={subscribed}
           >
-            {subscribed ? 'Thank you!' : 'Sign up'}
+            {subscribed ? 'Thank you!' : 'Contact Enterprise '}
           </button>
         </div>
       </form>

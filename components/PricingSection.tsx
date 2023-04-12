@@ -4,7 +4,7 @@ const tiers = [
   {
     name: 'Individual',
     id: 'tier-hobby',
-    href: '#',
+    href: '#contact',
     priceMonthly: '$499',
     description: 'Perfect for getting started with Discontinuity AI. Build the next level automation tools.',
     features: ['5 Agents', '10,000 Requests/Month', 'Up to 5 External Tools', '48-hour support response time'],
@@ -12,7 +12,7 @@ const tiers = [
   {
     name: 'Team',
     id: 'tier-team',
-    href: '#',
+    href: '#contact',
     priceMonthly: '$799',
     description: 'Scale your models into production with a team plan. Build the next level automation tools for your team or public facing app',
     features: [
@@ -61,21 +61,21 @@ export default function PricingSection() {
               {tiers.map((tier) => (
                 <div
                   key={tier.id}
-                  className="flex flex-col justify-between rounded-3xl bg-white p-8 shadow-xl ring-1 ring-gray-900/10 sm:p-10"
+                  className="flex flex-col justify-between rounded-3xl dark:bg-slate-800/80 bg-slate-200/80 p-8 shadow-xl ring-1 ring-gray-900/10 sm:p-10"
                 >
                   <div>
-                    <h3 id={tier.id} className="text-base font-semibold leading-7 text-indigo-600">
+                    <h3 id={tier.id} className="text-base font-semibold leading-7 text-secondary-600">
                       {tier.name}
                     </h3>
                     <div className="mt-4 flex items-baseline gap-x-2">
-                      <span className="text-5xl font-bold tracking-tight text-gray-900">{tier.priceMonthly}</span>
-                      <span className="text-base font-semibold leading-7 text-gray-600">/month</span>
+                      <span className="text-5xl font-bold tracking-tight text-gray-800 dark:text-gray-300">{tier.priceMonthly}</span>
+                      <span className="text-base font-semibold leading-7 text-gray-600 dark:text-gray-400">/month</span>
                     </div>
-                    <p className="mt-6 text-base leading-7 text-gray-600">{tier.description}</p>
-                    <ul role="list" className="mt-10 space-y-4 text-sm leading-6 text-gray-600">
+                    <p className="mt-6 text-base leading-7 text-gray-600 dark:text-gray-400">{tier.description}</p>
+                    <ul role="list" className="mt-10 space-y-4 text-sm leading-6 text-gray-600 dark:text-gray-400">
                       {tier.features.map((feature) => (
                         <li key={feature} className="flex gap-x-3">
-                          <CheckIcon className="h-6 w-5 flex-none text-indigo-600" aria-hidden="true" />
+                          <CheckIcon className="h-6 w-5 flex-none text-primary-400" aria-hidden="true" />
                           {feature}
                         </li>
                       ))}
@@ -84,22 +84,22 @@ export default function PricingSection() {
                   <a
                     href={tier.href}
                     aria-describedby={tier.id}
-                    className="mt-8 block rounded-md bg-indigo-600 px-3.5 py-2 text-center text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    className="mt-8 block rounded-md bg-primary-400 px-3.5 py-2 text-center text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   >
                     Get started today
                   </a>
                 </div>
               ))}
-              <div className="flex flex-col items-start bg-white gap-x-8 gap-y-6 rounded-3xl p-8 ring-1 ring-gray-900/10 sm:gap-y-10 sm:p-10 lg:col-span-2 lg:flex-row lg:items-center">
+              <div className="flex flex-col items-start dark:bg-slate-800/80 bg-slate-200/80  gap-x-8 gap-y-6 rounded-3xl p-8 ring-1 ring-gray-900/10 sm:gap-y-10 sm:p-10 lg:col-span-2 lg:flex-row lg:items-center">
                 <div className="lg:min-w-0 lg:flex-1">
-                  <h3 className="text-lg font-semibold leading-8 tracking-tight text-indigo-600">Enterprise</h3>
-                  <p className="mt-1 text-base leading-7 text-gray-600">
+                  <h3 className="text-lg font-semibold leading-8 tracking-tight text-secondary-600">Enterprise</h3>
+                  <p className="mt-1 text-base leading-7 text-gray-800 dark:text-gray-300">
                     Are those features not enough? We can build a custom plan for you. Contact us to get started.
                   </p>
                 </div>
                 <a
-                  href="#"
-                  className="rounded-md px-3.5 py-2 text-sm font-semibold leading-6 text-indigo-600 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  href="#contact"
+                  className="rounded-md px-3.5 py-2 text-sm font-semibold leading-6 text-gray-800 dark:text-gray-300 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Contact us <span aria-hidden="true">&rarr;</span>
                 </a>

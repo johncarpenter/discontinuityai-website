@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { ColorIcon } from './DiscontinuityIcon'
 
 const AgentSearch = () => {
-  const [query, setQuery] = useState('')
+  const [query, setQuery] = useState('What is discontinuity.ai?')
   const [results, setResults] = useState<SearchResponse | null>(null)
   const [loading, setLoading] = useState(false)
 
@@ -59,7 +59,7 @@ const AgentSearch = () => {
       <span
         role="button"
         onClick={() => setQuery(q)}
-        className="m-2 whitespace-nowrap inline-flex items-center rounded-md bg-secondary-400 px-2.5 py-0.5 text-sm font-medium text-gray-800"
+        className="m-2 whitespace-nowrap inline-flex items-center rounded-md bg-primary-600 px-2.5 py-0.5 text-sm font-medium text-gray-200"
       >
         {q}
       </span>
@@ -86,22 +86,23 @@ const AgentSearch = () => {
             disabled={loading}
             onChange={handleQueryChange}
             onKeyUp={handleKeyPress.bind(this)}
-            className="border-0 dark:text-gray-100 dark:bg-gray-900 block w-full rounded-xl p-2 pr-8 leading-normal shadow-md shadow-secondary-200 ring-2 ring-inset ring-secondary-300 focus:ring-2 focus:ring-inset focus:ring-secondary-300 text-xl md:text-3xl lg:text-4xl"
+            className="border-0 dark:text-gray-100 dark:bg-gray-900 block w-full rounded-xl p-2 pr-8 leading-normal shadow-sm shadow-primary-200 ring-1 ring-inset ring-primary-300 focus:ring-1 focus:ring-inset focus:ring-primary-300 text-lg md:text-3xl lg:text-3xl"
           />
 
-          <div className="absolute inset-y-0 right-0 flex py-1.5 pr-1.5">
+          <div className="absolute inset-y-0 right-0 flex py-1.2 pr-1.5">
+          <div role="status">
             {loading ? (
-              <div role="status">
-                <span className="inline-flex items-center animate-pulse ">
-                  <ColorIcon width={48} height={48} />
-                  <span className="sr-only">Loading...</span>
+              
+                <span className="inline-flex items-center animate-pulse animate-spin">
+                  <ColorIcon width={48} height={48} />                  
                 </span>
-              </div>
+              
             ) : (
               <span {...buttonize(sendQueryRequest)} className="inline-flex items-center  ">
                 <ColorIcon width={48} height={48} />
               </span>
             )}
+            </div>
           </div>
         </div>
 
@@ -110,7 +111,7 @@ const AgentSearch = () => {
             {results?.error ? (
               <div className="text-secondary-500">{results?.error}</div>
             ) : (
-              <div className="text-gray-200 text-lg">
+              <div className="text-gray-800 dark:text-gray-300 text-lg">
                 {results?.response?.output_text}
               </div>
             )}

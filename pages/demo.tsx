@@ -4,6 +4,7 @@ import { PageSEO } from '@/components/SEO'
 import { sortedBlogPost, allCoreContent } from '@/lib/utils/contentlayer'
 import { InferGetStaticPropsType } from 'next'
 import { allBlogs } from 'contentlayer/generated'
+import GridLayout from '@/layouts/GridLayout'
 
 export const POSTS_PER_PAGE = 5
 
@@ -32,11 +33,11 @@ export default function Blog({
   return (
     <>
       <PageSEO title={`Demo - ${siteMetadata.author}`} description={siteMetadata.description} />
-      <ListLayout
+      <GridLayout
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
-        title="All Demos"
+        title="Live Demos"
       />
     </>
   )

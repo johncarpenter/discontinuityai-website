@@ -6,14 +6,15 @@ type Data = {
   }
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
+
+    const API_KEY = process.env.DIS_API_KEY
     const URL = 'https://api.discontinuity.ai/agent/demo/'
-    //const URL = 'http://127.0.0.1:8000/agent/demo/'
   
     fetch(`${URL}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': '2c4ffb86-d335-11ed-bddf-325096b39f47',
+        'x-api-key': API_KEY,
       },
       body: JSON.stringify({q: `${req.query.q}`})
       })

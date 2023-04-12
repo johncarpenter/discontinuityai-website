@@ -2,11 +2,11 @@ import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import { sortedBlogPost, allCoreContent } from '@/lib/utils/contentlayer'
 import { InferGetStaticPropsType } from 'next'
-import NewsletterForm from '@/components/NewsletterForm'
 import { allBlogs } from 'contentlayer/generated'
 import Hero from '@/components/Hero'
 import CTA1 from '@/components/CTA1'
 import PricingSection from '@/components/PricingSection'
+import ContactForm from '@/components/ContactForm'
 
 const MAX_DISPLAY = 5
 
@@ -22,20 +22,18 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <Hero/>
-      <div className="pt-8">
+      <section id="hero">
+      < Hero/>
+      </section>
+      <section id="cta-1" className="pt-8">
         <CTA1/>
-      </div>
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+      </section>
+      <section id="pricing" className="pt-8">
         <PricingSection/>
-        </div>
-  
-      
-      {siteMetadata.newsletter.provider !== '' && (
-        <div className="flex items-center justify-center pt-4">
-          <NewsletterForm />
-        </div>
-      )}
+      </section>
+      <section id="contact" className="pt-8">
+        <ContactForm />
+      </section>
     </>
   )
 }
